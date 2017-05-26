@@ -10,31 +10,60 @@ namespace lb01
 {
     class ReadFile
     {
-        public List<string> readFile()
+
+        OpenFileDialog f = new OpenFileDialog();
+
+        #region 读取文件
+        public OpenFileDialog readFile()
         {
-            List<string> lines = new List<string>();
-            OpenFileDialog f = new OpenFileDialog();
             f.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
             f.RestoreDirectory = true;
+            return f;
+        }
+        #endregion
 
-            if (f.ShowDialog() == DialogResult.OK)
+        #region 获取数据内容
+        public List<string> getList(List<T>, OpenFileDialog f)
+        {
+            List<string> lines = new List<string>();
+            
+            string path = f.FileName;
+            using (StreamReader r = new StreamReader(f.OpenFile()))
             {
-                using (StreamReader r = new StreamReader(f.OpenFile()))
+                lines = r.ReadLine().Split(' ').ToList<string>();
+                lines.RemoveAll(String.IsNullOrEmpty);
+                string line;
+                while ((line = r.ReadLine()) != null)
                 {
-                    string line;
-                    while ((line = r.ReadLine()) != null)
-                    {
-                        lines.Add(line);
-                    }
+                    lines.Add(line);
                 }
             }
 
             return lines;
         }
 
-        private void handleLine (string line)
+        //数据处理
+        private void handleData()
         {
-
+            ControlPoints.Add(new LPointClass
+            {
+                PID = TempString[0],
+                H = double.Parse(TempString[1]),
+                IsControlP = true,
+                IsH0 = true
+            });
         }
+        #endregion
+
+        #region 获取数据路径
+        public string getPath(OpenFileDialog f)
+        {
+            if (f.ShowDialog() == DialogResult.OK)
+            {
+                return f.FileName;
+            }
+            return "error";
+        }
+        #endregion
     }
 }

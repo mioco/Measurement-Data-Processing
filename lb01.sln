@@ -5,6 +5,10 @@ VisualStudioVersion = 15.0.26403.7
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lb01", "lb01\lb01.csproj", "{D72F9517-9506-470E-8295-7275756A211A}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sample", "Sample", "{3BB0DDE1-89B1-428E-80F6-1A027DEF9086}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "水准网平差程序", "..\测量平差程序、报告\水准网平差程序（参考）\水准网平差程序\水准网平差程序.csproj", "{500AC969-6C13-4940-AF3E-B38B5839F3B3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,8 +19,15 @@ Global
 		{D72F9517-9506-470E-8295-7275756A211A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D72F9517-9506-470E-8295-7275756A211A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D72F9517-9506-470E-8295-7275756A211A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{500AC969-6C13-4940-AF3E-B38B5839F3B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{500AC969-6C13-4940-AF3E-B38B5839F3B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{500AC969-6C13-4940-AF3E-B38B5839F3B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{500AC969-6C13-4940-AF3E-B38B5839F3B3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{500AC969-6C13-4940-AF3E-B38B5839F3B3} = {3BB0DDE1-89B1-428E-80F6-1A027DEF9086}
 	EndGlobalSection
 EndGlobal

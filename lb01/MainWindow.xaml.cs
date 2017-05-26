@@ -23,6 +23,7 @@ namespace lb01
     /// </summary>
     public partial class MainWindow : Window
     {
+
         public MainWindow()
         {
             InitializeComponent();
@@ -31,16 +32,10 @@ namespace lb01
         #region 文件读取
         private void readData(object sender, RoutedEventArgs e)
         {
-            ReadFile readFile = new ReadFile();
-            List<string> pointList = readFile.readFile();
-            pointList.ForEach(print);
+            Window1 readFileWindow = new Window1();
+            readFileWindow.Show();
         }
         #endregion
-
-        private void print (string p)
-        {
-            Console.WriteLine(p);
-        }
 
         #region 高程计算
         private void elevation(object sender, RoutedEventArgs e)
@@ -73,7 +68,7 @@ namespace lb01
         #region 退出
         private void closeWindow(object sender, RoutedEventArgs e)
         {
-
+            Environment.Exit(0);
         }
         #endregion
     }

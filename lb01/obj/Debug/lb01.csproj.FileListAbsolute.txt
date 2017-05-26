@@ -12,3 +12,5 @@ E:\Homework\测量数据处理及程序设计\lb01\lb01\obj\Debug\lb01.Propertie
 E:\Homework\测量数据处理及程序设计\lb01\lb01\obj\Debug\lb01.csproj.GenerateResource.Cache
 E:\Homework\测量数据处理及程序设计\lb01\lb01\obj\Debug\lb01.exe
 E:\Homework\测量数据处理及程序设计\lb01\lb01\obj\Debug\lb01.pdb
+E:\Homework\测量数据处理及程序设计\lb01\lb01\obj\Debug\ReadFile.g.cs
+E:\Homework\测量数据处理及程序设计\lb01\lb01\obj\Debug\ReadFile.baml
