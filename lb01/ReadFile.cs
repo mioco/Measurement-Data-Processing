@@ -11,52 +11,83 @@ namespace lb01
     class ReadFile
     {
 
-        OpenFileDialog f = new OpenFileDialog();
+        private OpenFileDialog f;
+        private string name = System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Namespace;
 
-        #region 读取文件
-        public OpenFileDialog readFile()
+        // 构造函数初始化设置
+        public ReadFile()
         {
+            f = new OpenFileDialog();
             f.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
             f.RestoreDirectory = true;
-            return f;
         }
-        #endregion
-
+        
         #region 获取数据内容
-        public List<string> getList(List<T>, OpenFileDialog f)
+        public List<LPointClass> getPoints()
         {
-            List<string> lines = new List<string>();
-            
-            string path = f.FileName;
+            List<string> TempString = new List<string>();
+            List<LPointClass> container = new List<LPointClass>();
+
             using (StreamReader r = new StreamReader(f.OpenFile()))
             {
-                lines = r.ReadLine().Split(' ').ToList<string>();
-                lines.RemoveAll(String.IsNullOrEmpty);
                 string line;
                 while ((line = r.ReadLine()) != null)
                 {
-                    lines.Add(line);
+                    // 处理每行数据，去空
+                    TempString = handleLine(line);
+
+                    // 创建构造函数类
+                    container.Add(new LPointClass
+                    {
+                        PID = TempString[0],
+                        H = double.Parse(TempString[1]),
+                        IsControlP = true,
+                        IsH0 = true
+                    });
                 }
             }
 
-            return lines;
+            return container;
         }
 
-        //数据处理
-        private void handleData()
+        public List<LineClass> getLines()
         {
-            ControlPoints.Add(new LPointClass
+            List<string> TempString = new List<string>();
+            List<LineClass> container = new List<LineClass>();
+
+            using (StreamReader r = new StreamReader(f.OpenFile()))
             {
-                PID = TempString[0],
-                H = double.Parse(TempString[1]),
-                IsControlP = true,
-                IsH0 = true
-            });
+                string line;
+                while ((line = r.ReadLine()) != null)
+                {
+                    // 处理每行数据，去空
+                    TempString = handleLine(line);
+                    
+                    container.Add(new LineClass
+                    {
+                        SP = new LPointClass { PID = TempString[0] },
+                        EP = new LPointClass { PID = TempString[1] },
+                        dH = double.Parse(TempString[2]),
+                        Distance = double.Parse(TempString[3]),
+                    });
+                }
+            }
+
+            return container;
         }
+
+        private List<string> handleLine(string line)
+        {
+            List<string> TempString = new List<string>();
+            TempString = line.Split(' ').ToList<string>();
+            TempString.RemoveAll(String.IsNullOrEmpty);
+            return TempString;
+        }
+
         #endregion
 
         #region 获取数据路径
-        public string getPath(OpenFileDialog f)
+        public string getPath()
         {
             if (f.ShowDialog() == DialogResult.OK)
             {

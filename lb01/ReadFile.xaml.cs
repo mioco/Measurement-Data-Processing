@@ -21,12 +21,7 @@ namespace lb01
     public partial class Window1 : Window
     {
         #region 变量定义
-        public static List<LPointClass> ControlPoints = new List<LPointClass>();
-        public static List<LPointClass> CurrentPoints = new List<LPointClass>();
-        public static List<LineClass> CurrentSegments = new List<LineClass>();
-        public double derta;//单位全中误差
 
-        string[] al; //定义一个字符串数组
         #endregion
 
         public Window1()
@@ -34,29 +29,40 @@ namespace lb01
             InitializeComponent();
         }
 
-        //读取点文件
+        // 读取点文件
         private void readPoint(object sender, RoutedEventArgs e)
         {
             ReadFile readFile = new ReadFile();
-            pointPath.Text = readFile.getPath(readFile.readFile());
-            addData(readFile.getList(readFile.readFile()), pointContent);
+            pointPath.Text = readFile.getPath();
+            
+            readFile.getPoints().ForEach(delegate (LPointClass P)
+            {
+                MainWindow.CurrentPoints.Add(P);
+                string temp = P.PID.ToString() + ", " + P.H.ToString() + "(m), " + P.IsControlP.ToString() + ": " + P.IsH0.ToString() + ';' + '\n';
+                pointContent.Items.Add(temp);
+            });
+
         }
 
-        //读取边文件
+        // 读取边文件
         private void readEdge(object sender, RoutedEventArgs e)
         {
             ReadFile readFile = new ReadFile();
-            edgePath.Text = readFile.getPath(readFile.readFile());
-            addData(readFile.getList(readFile.readFile()), edgeContent);
+            edgePath.Text = readFile.getPath();
+            int ii = 0;
+
+            readFile.getLines().ForEach(delegate (LineClass L)
+            {
+                MainWindow.CurrentSegments.Add(L);
+                string temp = ii.ToString() + ":  " + L.SP.PID.ToString() + ",  " + L.EP.PID.ToString() + ",  " + L.dH.ToString() + "m,  " + L.Distance.ToString() + "km;" + '\n';
+                edgeContent.Items.Add(temp);
+                ii++;
+            });
         }
 
-        //数据填充
-        private void addData(List<string> data, ListBox container)
+        private void confirm(object sender, RoutedEventArgs e)
         {
-            data.ForEach(delegate (string d)
-            {
-                container.Items.Add(d);
-            });
+            this.Close();
         }
     }
 }

@@ -25,24 +25,7 @@
                 </Grid.ColumnDefinitions>
                 <Grid>
                     <TextBlock TextWrapping="Wrap" Text="当前点" Padding="0,5,0,0" FontSize="16" TextAlignment="Center" ScrollViewer.CanContentScroll="True"/>
-                    <ListBox Grid.Row="1" BorderBrush="{x:Null}" Background="{x:Null}"/>
-                    <Grid.RowDefinitions>
-                        <RowDefinition/>
-                        <RowDefinition Height="10*"/>
-                    </Grid.RowDefinitions>
-                </Grid>
-                <Grid Grid.Column="1">
-                    <Rectangle Fill="#EFEFEFEF" Grid.RowSpan="2"/>
-                    <ListBox Grid.Row="1" BorderBrush="{x:Null}" Background="{x:Null}"/>
-                    <TextBlock Text="计算精度" TextWrapping="Wrap" Padding="0,5,0,0" FontSize="16" TextAlignment="Center" ScrollViewer.CanContentScroll="True"/>
-                    <Grid.RowDefinitions>
-                        <RowDefinition/>
-                        <RowDefinition Height="10*"/>
-                    </Grid.RowDefinitions>
-                </Grid>
-                <Grid Grid.Column="2">
-                    <TextBlock TextWrapping="Wrap" Text="高程初始值" Padding="0,5,0,0" FontSize="16" TextAlignment="Center" ScrollViewer.CanContentScroll="True"/>
-                    <ListBox Grid.Row="1" BorderBrush="{x:Null}" Background="{x:Null}"/>
+                    <ListBox x:Name="currentPoint" Grid.Row="1" BorderBrush="{x:Null}" Background="{x:Null}"/>
                     <Grid.RowDefinitions>
                         <RowDefinition/>
                         <RowDefinition Height="10*"/>
@@ -50,8 +33,25 @@
                 </Grid>
                 <Grid Grid.Column="3">
                     <Rectangle Fill="#EFEFEFEF" Grid.RowSpan="2"/>
+                    <ListBox x:Name="accuracy" Grid.Row="1" BorderBrush="{x:Null}" Background="{x:Null}"/>
+                    <TextBlock Text="计算精度" TextWrapping="Wrap" Padding="0,5,0,0" FontSize="16" TextAlignment="Center" ScrollViewer.CanContentScroll="True"/>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition Height="10*"/>
+                    </Grid.RowDefinitions>
+                </Grid>
+                <Grid Grid.Column="1">
+                    <Rectangle Fill="#EFEFEFEF" Grid.RowSpan="2"/>
+                    <TextBlock TextWrapping="Wrap" Text="高程初始值" Padding="0,5,0,0" FontSize="16" TextAlignment="Center" ScrollViewer.CanContentScroll="True"/>
+                    <ListBox x:Name="height" Grid.Row="1" BorderBrush="{x:Null}" Background="{x:Null}"/>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition Height="10*"/>
+                    </Grid.RowDefinitions>
+                </Grid>
+                <Grid Grid.Column="2">
                     <TextBlock TextWrapping="Wrap" Text="平差结果" Padding="0,5,0,0" FontSize="16" TextAlignment="Center" ScrollViewer.CanContentScroll="True"/>
-                    <ListBox Grid.Row="1" BorderBrush="{x:Null}" Background="{x:Null}"/>
+                    <ListBox x:Name="adjustLevel" Grid.Row="1" BorderBrush="{x:Null}" Background="{x:Null}"/>
                     <Grid.RowDefinitions>
                         <RowDefinition/>
                         <RowDefinition Height="10*"/>
@@ -84,17 +84,17 @@
                     <Rectangle Fill="#EFEFEFEF" Grid.Row="1" Height="367" VerticalAlignment="Top"/>
                     <TextBlock TextWrapping="Wrap" FontSize="16" TextAlignment="Center" Padding="0,8,0,0" Grid.IsSharedSizeScope="True" Text="输入数据"/>
                     <DockPanel HorizontalAlignment="Left" Height="367" LastChildFill="False" Grid.Row="1" VerticalAlignment="Top" Width="203"/>
-                    <Expander Height="29" Grid.Row="1" VerticalAlignment="Top" DockPanel.Dock="top" FontSize="16">
+                    <Expander Height="118" Grid.Row="1" VerticalAlignment="Top" DockPanel.Dock="top" FontSize="16" Margin="0,0,-0.5,0">
                         <Expander.Header>
                             <TextBlock Margin="10,0,0,0"  TextTrimming="WordEllipsis">点要素</TextBlock>
                         </Expander.Header>
-                        <ListBox x:Name="pointFeature"/>
+                        <ListBox x:Name="pointFeature" Height="152" Margin="0,0,-0.5,0"/>
                     </Expander>
-                    <Expander Height="29" Grid.Row="1" VerticalAlignment="Top" FontSize="16" Margin="0,29,0,0">
+                    <Expander Height="246" Grid.Row="1" VerticalAlignment="Top" FontSize="16" Margin="0,123,-0.5,-0.5">
                         <Expander.Header>
                             <TextBlock Margin="10,0,0,0"  TextTrimming="WordEllipsis">边要素</TextBlock>
                         </Expander.Header>
-                        <ListBox ItemsSource="{Binding ListItems}" HorizontalContentAlignment="Stretch"/>
+                        <ListBox x:Name="edgeFeature" HorizontalContentAlignment="Stretch"/>
                     </Expander>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="1*"/>

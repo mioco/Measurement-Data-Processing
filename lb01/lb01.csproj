@@ -55,10 +55,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AdjustLevel.cs" />
     <Compile Include="ReadFile.xaml.cs">
       <DependentUpon>ReadFile.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Utillity_Class.cs" />
+    <Compile Include="Utility_Class.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

@@ -23,7 +23,6 @@ namespace lb01
     //边要素类
     public class LineClass
     {
-
         public string LID { get; set; }             //观测边号
         public LPointClass SP { get; set; }        //起点
         public LPointClass EP { get; set; }        //终点
