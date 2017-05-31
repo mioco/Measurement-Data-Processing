@@ -47,6 +47,71 @@ namespace lb01
                 currentPoint.Items.Add(temp);
             }
 
+            // 显示原始高程数值
+            foreach (LineClass TLine in CurrentSegments)
+            {
+                //添加当前边起始点
+
+                int Index_P = Belong(CurrentPoints, TLine.SP.PID);
+                int Index = 0;
+                if (Index_P == -1)
+                {
+                    //不在当前点集合中
+                    Index = Belong(ControlPoints, TLine.SP.PID);
+                    if (Index == -1)
+                    {
+                        //不是控制点
+                        CurrentPoints.Add(new LPointClass
+                        {
+                            PID = TLine.SP.PID,
+                            //**********************************************************************************************************
+                            //修改处：将非控制点初始高程显示为0，而不是10000
+                            H = 0,
+                            IsControlP = false,
+                            IsH0 = false
+                        });
+                        TLine.SP.H = 0;
+                        TLine.SP.IsControlP = false;
+                        TLine.SP.IsH0 = false;
+                    }
+                    else
+                    {
+                        //是控制点
+                        CurrentPoints.Add(ControlPoints[Index]);
+                        TLine.SP = ControlPoints[Index];
+                    }
+                }
+                //添加当前边尾点
+                Index_P = Belong(CurrentPoints, TLine.EP.PID);
+                if (Index_P == -1)
+                {
+                    //不在当前点集合中
+                    Index = Belong(ControlPoints, TLine.EP.PID);
+                    if (Index == -1)
+                    {
+                        //不是控制点
+                        CurrentPoints.Add(new LPointClass
+                        {
+                            PID = TLine.EP.PID,
+                            H = 0,
+                            IsControlP = false,
+                            IsH0 = false
+                        });
+                        TLine.EP.H = 0;
+                        TLine.EP.IsControlP = false;
+                        TLine.EP.IsH0 = false;
+                    }
+                    else
+                    {
+                        //是控制点
+                        CurrentPoints.Add(ControlPoints[Index]);
+                        TLine.EP = ControlPoints[Index];
+                    }
+                }
+
+
+            }
+
         }
 
         //遍历插入
