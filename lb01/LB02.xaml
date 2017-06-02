@@ -1,0 +1,81 @@
+﻿<Window x:Class="lb01.LB02"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:lb01"
+        mc:Ignorable="d"
+        Title="LB02" Height="717" Width="1024">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="15*"/>
+        </Grid.RowDefinitions>
+        <Grid >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="3*"/>
+            </Grid.ColumnDefinitions>
+            <Menu AllowDrop="True" >
+                <MenuItem Header="文件" HorizontalContentAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" VerticalContentAlignment="Center" FontSize="20" Height="43" Width="128">
+                    <MenuItem Header="控制点文件" Click="MenuItem_Click"/>
+                    <MenuItem Header="观测数据" Click="MenuItem_Click_1"/>
+                    <MenuItem Header="测边数据" Click="MenuItem_Click_2"/>
+                    <MenuItem Header="退出" Click="MenuItem_Click_3"/>
+                </MenuItem>
+            </Menu>
+            <Menu AllowDrop="True" Grid.Column="1">
+                <MenuItem Header="分布处理" HorizontalContentAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" VerticalContentAlignment="Center" FontSize="20" Height="43" Width="128">
+                    <MenuItem Header="提取所有点" Click="MenuItem_Click_4"/>
+                    <MenuItem Header="提取未知点" Click="MenuItem_Click_5"/>
+                    <MenuItem Header="初始值计算" Click="MenuItem_Click_6"/>
+                    <MenuItem Header="角误差方程" Click="MenuItem_Click_7"/>
+                    <MenuItem Header="边误差方程" Click="MenuItem_Click_8"/>
+                    <MenuItem Header="合并误差方程" Click="MenuItem_Click_9"/>
+                    <MenuItem Header="平差计算" Click="MenuItem_Click_10"/>
+                </MenuItem>
+            </Menu>
+            <Menu AllowDrop="True" Grid.Column="2">
+                <MenuItem Header="一步解算" HorizontalContentAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" VerticalContentAlignment="Center" FontSize="20" Height="43" Width="128">
+                    <MenuItem Header="一步解算" Click="MenuItem_Click_11"/>
+                </MenuItem>
+            </Menu>
+            <Menu AllowDrop="True" Grid.Column="3">
+                <MenuItem Header="精度评价" HorizontalContentAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" VerticalContentAlignment="Center" FontSize="20" Height="43" Width="128">
+                    <MenuItem Header="观测残差" Click="MenuItem_Click_12"/>
+                    <MenuItem Header="误差椭圆"/>
+                    <MenuItem Header="单位权误差"/>
+                    <MenuItem Header="坐标中误差"/>
+                    <MenuItem Header="方位角中误差"/>
+                    <MenuItem Header="测边中误差"/>
+                </MenuItem>
+            </Menu>
+            <Menu AllowDrop="True" Grid.Column="4">
+                <MenuItem Header="成果输出" HorizontalContentAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" VerticalContentAlignment="Center" FontSize="20" Height="43" Width="128">
+                    <MenuItem Header="成果输出"/>
+                    <MenuItem Header="保存"/>
+                </MenuItem>
+            </Menu>
+        </Grid>
+        <TabControl Grid.Row="1">
+            <TabItem Header="原始数据">
+                <Grid Background="#FFE5E5E5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                </Grid>
+            </TabItem>
+            <TabItem Header="过程结果">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+            <TabItem Header="最终结果"/>
+        </TabControl>
+
+    </Grid>
+</Window>

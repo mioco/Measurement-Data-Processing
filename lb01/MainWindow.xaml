@@ -84,13 +84,13 @@
                     <Rectangle Fill="#EFEFEFEF" Grid.Row="1" Height="367" VerticalAlignment="Top"/>
                     <TextBlock TextWrapping="Wrap" FontSize="16" TextAlignment="Center" Padding="0,8,0,0" Grid.IsSharedSizeScope="True" Text="输入数据"/>
                     <DockPanel HorizontalAlignment="Left" Height="367" LastChildFill="False" Grid.Row="1" VerticalAlignment="Top" Width="203"/>
-                    <Expander Height="118" Grid.Row="1" VerticalAlignment="Top" DockPanel.Dock="top" FontSize="16" Margin="0,0,-0.5,0">
+                    <Expander Height="157" Grid.Row="1" VerticalAlignment="Top" DockPanel.Dock="top" FontSize="16" Margin="0,0,-0.5,0">
                         <Expander.Header>
                             <TextBlock Margin="10,0,0,0"  TextTrimming="WordEllipsis">点要素</TextBlock>
                         </Expander.Header>
-                        <ListBox x:Name="pointFeature" Height="152" Margin="0,0,-0.5,0"/>
+                        <ListBox x:Name="pointFeature" Height="152" Margin="0,0,-0.5,0" SelectionChanged="pointFeature_SelectionChanged"/>
                     </Expander>
-                    <Expander Height="246" Grid.Row="1" VerticalAlignment="Top" FontSize="16" Margin="0,123,-0.5,-0.5">
+                    <Expander Height="212" Grid.Row="1" VerticalAlignment="Top" FontSize="16" Margin="0,157,-0.5,-0.5">
                         <Expander.Header>
                             <TextBlock Margin="10,0,0,0"  TextTrimming="WordEllipsis">边要素</TextBlock>
                         </Expander.Header>

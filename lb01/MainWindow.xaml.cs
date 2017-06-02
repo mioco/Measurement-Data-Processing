@@ -246,7 +246,6 @@ namespace lb01
                 }
             }
 
-
             adjustLevel.Items.Add(temps);
             MessageBox.Show("完成水准网平差");
         }
@@ -278,5 +277,10 @@ namespace lb01
             this.Close();
         }
         #endregion
+
+        private void pointFeature_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

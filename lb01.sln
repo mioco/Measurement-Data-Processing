@@ -7,9 +7,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lb01", "lb01\lb01.csproj", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sample", "Sample", "{3BB0DDE1-89B1-428E-80F6-1A027DEF9086}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalculateMeasurementData", "..\..\CalculateMeasurementData\SpwPingCha\CalculateMeasurementData.csproj", "{3D2E14D8-4500-447D-86E7-9C0398FC7508}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControlsAndLayout", "..\..\WPF-Samples-master\Getting Started\ControlsAndLayout\ControlsAndLayout\ControlsAndLayout.csproj", "{AC167A27-1309-4A7C-842F-A971AE067C96}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model", "..\..\CalculateMeasurementData\Model\Model.csproj", "{62658B95-70A0-4427-B12B-05DA8A182442}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalculateMeasurementData", "..\..\CalculateMeasurementData\SpwPingCha\CalculateMeasurementData.csproj", "{3D2E14D8-4500-447D-86E7-9C0398FC7508}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,20 +21,20 @@ Global
 		{D72F9517-9506-470E-8295-7275756A211A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D72F9517-9506-470E-8295-7275756A211A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D72F9517-9506-470E-8295-7275756A211A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC167A27-1309-4A7C-842F-A971AE067C96}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC167A27-1309-4A7C-842F-A971AE067C96}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC167A27-1309-4A7C-842F-A971AE067C96}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC167A27-1309-4A7C-842F-A971AE067C96}.Release|Any CPU.Build.0 = Release|Any CPU
 		{3D2E14D8-4500-447D-86E7-9C0398FC7508}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{3D2E14D8-4500-447D-86E7-9C0398FC7508}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3D2E14D8-4500-447D-86E7-9C0398FC7508}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3D2E14D8-4500-447D-86E7-9C0398FC7508}.Release|Any CPU.Build.0 = Release|Any CPU
-		{62658B95-70A0-4427-B12B-05DA8A182442}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{62658B95-70A0-4427-B12B-05DA8A182442}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{62658B95-70A0-4427-B12B-05DA8A182442}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{62658B95-70A0-4427-B12B-05DA8A182442}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
+		{AC167A27-1309-4A7C-842F-A971AE067C96} = {3BB0DDE1-89B1-428E-80F6-1A027DEF9086}
 		{3D2E14D8-4500-447D-86E7-9C0398FC7508} = {3BB0DDE1-89B1-428E-80F6-1A027DEF9086}
-		{62658B95-70A0-4427-B12B-05DA8A182442} = {3BB0DDE1-89B1-428E-80F6-1A027DEF9086}
 	EndGlobalSection
 EndGlobal

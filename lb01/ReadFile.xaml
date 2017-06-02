@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:lb01"
         mc:Ignorable="d"
-        Title="Window1" Height="312.677" Width="500">
+        Title="文件读取" Height="312.677" Width="500">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>
@@ -39,7 +39,7 @@
                 <RowDefinition Height="7*"/>
             </Grid.RowDefinitions>
             <TextBlock TextWrapping="Wrap" Text="边要素" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-            <ListBox x:Name="edgeContent" Grid.Row="1" Background="{x:Null}" BorderBrush="#FFABADB3"/>
+            <ListBox x:Name="edgeContent" Grid.Row="1" Background="{x:Null}" BorderBrush="#FFABADB3" Margin="0,0,-0.5,0"/>
         </Grid>
         <Button Content="确定" Grid.Row="3" Grid.ColumnSpan="4" Background="#FFF0F1F6" Click="confirm" BorderBrush="{x:Null}"/>
 

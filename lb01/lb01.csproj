@@ -36,6 +36,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
@@ -56,10 +57,17 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="AdjustLevel.cs" />
+    <Compile Include="LB02.xaml.cs">
+      <DependentUpon>LB02.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ReadFile.xaml.cs">
       <DependentUpon>ReadFile.xaml</DependentUpon>
     </Compile>
     <Compile Include="Utility_Class.cs" />
+    <Page Include="LB02.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
