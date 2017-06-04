@@ -35,9 +35,9 @@ namespace MDP
             ReadFile readFile = new ReadFile();
             pointPath.Text = readFile.getPath();
             
-            readFile.getPoints().ForEach(delegate (LPointClass P)
+            readFile.getPoints().ForEach(delegate (PointClass P)
             {
-                MainWindow.CurrentPoints.Add(P);
+                LB01.CurrentPoints.Add(P);
                 string temp = P.PID.ToString() + ", " + P.H.ToString() + "(m), " + P.IsControlP.ToString() + ": " + P.IsH0.ToString() + ';' + '\n';
                 pointContent.Items.Add(temp);
             });
@@ -53,7 +53,7 @@ namespace MDP
 
             readFile.getLines().ForEach(delegate (LineClass L)
             {
-                MainWindow.CurrentSegments.Add(L);
+                LB01.CurrentSegments.Add(L);
                 string temp = ii.ToString() + ":  " + L.SP.PID.ToString() + ",  " + L.EP.PID.ToString() + ",  " + L.dH.ToString() + "m,  " + L.Distance.ToString() + "km;" + '\n';
                 edgeContent.Items.Add(temp);
                 ii++;

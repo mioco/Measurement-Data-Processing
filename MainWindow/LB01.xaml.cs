@@ -1,6 +1,7 @@
 ﻿using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -277,9 +278,59 @@ namespace MDP
         }
         #endregion
 
-        private void pointFeature_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void draw(object sender, RoutedEventArgs e)
         {
+            Bitmap bmap = new Bitmap(305, 359);
+            Graphics gph = Graphics.FromImage(bmap);
+            CurrentPoints[0].X = 300;
+            CurrentPoints[0].Y = 300;
+            CurrentPoints[1].X = 150;
+            CurrentPoints[1].Y = 300;
+            CurrentPoints[2].X = 100;
+            CurrentPoints[2].Y = 350;
+            CurrentPoints[3].X = 200;
+            CurrentPoints[3].Y = 300;
 
+            foreach (PointClass CP in CurrentPoints)
+            {
+                gph.DrawEllipse(Pens.Black, Convert.ToInt16(CP.X), Convert.ToInt16(CP.Y), 1, 1);
+                gph.FillEllipse(new SolidBrush(System.Drawing.Color.Black), Convert.ToInt16(CP.X) - 1f, Convert.ToInt16(CP.Y) - 1f, 1, 1);
+
+            }
+            float x1, x2, y1, y2;
+            for (int i = 0; i < 5; i++)
+            {
+                int a = Convert.ToInt16(CurrentSegments[i].SP.PID) - 1;
+                int b = Convert.ToInt16(CurrentSegments[i].EP.PID) - 1;
+                x1 = (float)CurrentPoints[a].X;
+                y1 = (float)CurrentPoints[a].Y;
+                x2 = (float)CurrentPoints[b].X;
+                y2 = (float)CurrentPoints[b].Y;
+                gph.DrawLine(new System.Drawing.Pen(System.Drawing.Color.Black, 2), x1, y1, x2, y2);
+            }
+            graphBox.Source = loadBitmap(bmap);
+        }
+
+        // 将Bitmap转换成BitmapSource
+        [System.Runtime.InteropServices.DllImport("gdi32")]
+        static extern int DeleteObject(IntPtr o);
+
+        public static BitmapSource loadBitmap(System.Drawing.Bitmap source)
+        {
+            IntPtr ip = source.GetHbitmap();
+            BitmapSource bs = null;
+            try
+            {
+                bs = System.Windows.Interop.Imaging.CreateBitmapSourceFromHBitmap(ip,
+                   IntPtr.Zero, Int32Rect.Empty,
+                   System.Windows.Media.Imaging.BitmapSizeOptions.FromEmptyOptions());
+            }
+            finally
+            {
+                DeleteObject(ip);
+            }
+
+            return bs;
         }
     }
 }

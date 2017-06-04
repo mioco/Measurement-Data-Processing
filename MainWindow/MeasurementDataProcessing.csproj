@@ -57,8 +57,14 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="AdjustLevel.cs" />
+    <Compile Include="LB01.xaml.cs">
+      <DependentUpon>LB01.xaml</DependentUpon>
+    </Compile>
     <Compile Include="LB02.xaml.cs">
       <DependentUpon>LB02.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LB03.xaml.cs">
+      <DependentUpon>LB03.xaml</DependentUpon>
     </Compile>
     <Compile Include="Matrix.cs" />
     <Compile Include="PingCha_Class.cs" />
@@ -67,7 +73,15 @@
     </Compile>
     <Compile Include="Tool_Class.cs" />
     <Compile Include="Utility_Class.cs" />
+    <Page Include="LB01.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="LB02.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LB03.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

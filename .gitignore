@@ -1,4 +1,7 @@
 /bin
 /img
 /obj
+/MainWindow/bin
+/MainWindow/obj
 .docx
+.suo

@@ -23,10 +23,10 @@ namespace MDP
         }
         
         #region 获取数据内容
-        public List<LPointClass> getPoints()
+        public List<PointClass> getPoints()
         {
             List<string> TempString = new List<string>();
-            List<LPointClass> container = new List<LPointClass>();
+            List<PointClass> container = new List<PointClass>();
 
             using (StreamReader r = new StreamReader(f.OpenFile()))
             {
@@ -37,7 +37,7 @@ namespace MDP
                     TempString = handleLine(line);
 
                     // 创建构造函数类
-                    container.Add(new LPointClass
+                    container.Add(new PointClass
                     {
                         PID = TempString[0],
                         H = double.Parse(TempString[1]),
@@ -65,8 +65,8 @@ namespace MDP
                     
                     container.Add(new LineClass
                     {
-                        SP = new LPointClass { PID = TempString[0] },
-                        EP = new LPointClass { PID = TempString[1] },
+                        SP = new PointClass { PID = TempString[0] },
+                        EP = new PointClass { PID = TempString[1] },
                         dH = double.Parse(TempString[2]),
                         Distance = double.Parse(TempString[3]),
                     });

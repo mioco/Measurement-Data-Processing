@@ -5,27 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MDP"
         mc:Ignorable="d"
-        Title="MainWindow" Height="717" Width="1274" Padding="0,1,0,0">
+        Title="测量数据处理程序" Height="60" Width="600" Padding="0,1,0,0" ResizeMode="NoResize">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="250*"/>
-            <ColumnDefinition Width="1024*"/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="2*"/>
         </Grid.ColumnDefinitions>
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="4*"/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition Height="7*"/>
-            </Grid.RowDefinitions>
-            <Button Content="Button" Grid.Row="1"/>
-            <Button Content="Button" Grid.Row="2"/>
-            <Button Content="Button" Grid.Row="3"/>
-        </Grid>
-        <Grid Grid.Column="1">
-            <DockPanel LastChildFill="False"/>
-        </Grid>
+        <Button Content="水准网平差" Click="LB01" Background="{x:Null}" BorderBrush="{x:Null}"/>
+        <Button Content="水平网平差" Grid.Column="1" Click="LB02" Background="{x:Null}" BorderBrush="{x:Null}"/>
+        <Button Content="坐标变换" Grid.Column="2" Click="LB03" Background="{x:Null}" BorderBrush="{x:Null}"/>
 
     </Grid>
 </Window>

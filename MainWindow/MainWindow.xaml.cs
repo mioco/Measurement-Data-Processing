@@ -20,5 +20,22 @@ namespace MDP
 {
     public partial class MainWindow : Window
     {
+        private void LB01(object sender, RoutedEventArgs e)
+        {
+            LB01 win = new LB01();
+            win.Show();
+        }
+
+        private void LB02(object sender, RoutedEventArgs e)
+        {
+            LB02 win = new LB02();
+            win.Show();
+        }
+
+        private void LB03(object sender, RoutedEventArgs e)
+        {
+            LB03 win = new LB03();
+            win.Show();
+        }
     }
 }

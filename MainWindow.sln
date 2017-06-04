@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26430.6
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MeasurementDataProcessing", "lb01\MeasurementDataProcessing.csproj", "{D72F9517-9506-470E-8295-7275756A211A}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sample", "Sample", "{3BB0DDE1-89B1-428E-80F6-1A027DEF9086}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalculateMeasurementData", "..\..\CalculateMeasurementData\SpwPingCha\CalculateMeasurementData.csproj", "{3D2E14D8-4500-447D-86E7-9C0398FC7508}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MeasurementDataProcessing", "MainWindow\MeasurementDataProcessing.csproj", "{D72F9517-9506-470E-8295-7275756A211A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalculateMeasurementData", "..\CalculateMeasurementData\SpwPingCha\CalculateMeasurementData.csproj", "{3D2E14D8-4500-447D-86E7-9C0398FC7508}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControlsAndLayout", "..\WPF-Samples-master\Getting Started\ControlsAndLayout\ControlsAndLayout\ControlsAndLayout.csproj", "{AC167A27-1309-4A7C-842F-A971AE067C96}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,11 +25,16 @@ Global
 		{3D2E14D8-4500-447D-86E7-9C0398FC7508}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3D2E14D8-4500-447D-86E7-9C0398FC7508}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3D2E14D8-4500-447D-86E7-9C0398FC7508}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC167A27-1309-4A7C-842F-A971AE067C96}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC167A27-1309-4A7C-842F-A971AE067C96}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC167A27-1309-4A7C-842F-A971AE067C96}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC167A27-1309-4A7C-842F-A971AE067C96}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{3D2E14D8-4500-447D-86E7-9C0398FC7508} = {3BB0DDE1-89B1-428E-80F6-1A027DEF9086}
+		{AC167A27-1309-4A7C-842F-A971AE067C96} = {3BB0DDE1-89B1-428E-80F6-1A027DEF9086}
 	EndGlobalSection
 EndGlobal
