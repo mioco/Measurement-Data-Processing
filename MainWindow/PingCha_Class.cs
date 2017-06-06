@@ -43,10 +43,10 @@ namespace MDP
             {
                 List<string> TempString = MyReader.ReadLine().Split(' ').ToList<string>();
                 //空格作为分隔符号
-                TempString.RemoveAll(Tool_Class.IsSpace);//移除所有空格的元素
-                ControlPoints.Add(new PointClass//读取的数据添加到ControlPoints点集合中
+                TempString.RemoveAll(String.IsNullOrEmpty); // 移除所有空格的元素
+                ControlPoints.Add(new PointClass // 读取的数据添加到ControlPoints点集合中
                 {
-                    PID = TempString[0],//点名
+                    PID = TempString[0], //点名
                     X = double.Parse(TempString[1]),//X坐标
                     Y = double.Parse(TempString[2]),//Y坐标
                     IsControlP = true//是否是控制点

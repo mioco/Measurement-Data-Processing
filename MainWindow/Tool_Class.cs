@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 
 namespace MDP
 {
@@ -167,6 +168,14 @@ namespace MDP
             tagetP.X = SP.X + Distance * Math.Cos(Azimuth);
             tagetP.Y = SP.Y + Distance * Math.Sin(Azimuth);
             return tagetP;
+        }
+
+        // 添加数据
+        public static void addData<T>(DataGrid dataGrid, List<T> list)
+        {
+            dataGrid.ItemsSource = null;
+            // dataGrid.AutoGenerateColumns = false;
+            dataGrid.ItemsSource = list;
         }
     }
 }

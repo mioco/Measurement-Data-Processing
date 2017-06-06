@@ -57,6 +57,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="AdjustLevel.cs" />
+    <Compile Include="CoordtoTrans.cs" />
     <Compile Include="LB01.xaml.cs">
       <DependentUpon>LB01.xaml</DependentUpon>
     </Compile>

@@ -33,7 +33,6 @@ namespace MDP
     #endregion
 
     #region 实验二
-
     // 测站信息类
     public class StationClass
     {
@@ -49,7 +48,6 @@ namespace MDP
         public double SdetX { get; set; }//测站纵坐标的增量
         public double SdetY { get; set; }//测站横坐标增量
     }
-    
     #endregion
 }
 

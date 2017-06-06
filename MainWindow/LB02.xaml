@@ -24,7 +24,6 @@
                 <MenuItem Header="文件" HorizontalContentAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Height="43" Width="128" HorizontalAlignment="Center">
                     <MenuItem Header="控制点文件" Click="MenuItem_Click"/>
                     <MenuItem Header="观测数据" Click="MenuItem_Click_1"/>
-                    <MenuItem Header="测边数据" Click="MenuItem_Click_2"/>
                     <MenuItem Header="退出" Click="MenuItem_Click_3"/>
                 </MenuItem>
             </Menu>
@@ -69,29 +68,8 @@
                         <RowDefinition/>
                         <RowDefinition/>
                     </Grid.RowDefinitions>
-                    <DataGrid x:Name="dataGridView3" Margin="0,37,164,199" ColumnWidth="SizeToCells" MinColumnWidth="150" Grid.RowSpan="2">
-                        <DataGrid.Columns>
-                            <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="PID"/>
-                            <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="X"/>
-                            <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Y"/>
-                            <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="H"/>
-                            <DataGridCheckBoxColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="IsControlP"/>
-                            <DataGridCheckBoxColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="IsH0"/>
-                            <DataGridCheckBoxColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="IsCommonP"/>
-                        </DataGrid.Columns>
-                    </DataGrid>
-                    <DataGrid Margin="0,36.5,164,0" Grid.Row="1" MinColumnWidth="150" >
-                        <DataGrid.Columns>
-                            <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="SP.PID"/>
-                            <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="BP.PID"/>
-                            <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="FP.PID"/>
-                            <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="DisB"/>
-                            <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="DisF"/>
-                            <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="LAngle"/>
-                            <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="BAzimuth"/>
-                            <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="FAzimuth"/>
-                        </DataGrid.Columns>
-                    </DataGrid>
+                    <DataGrid x:Name="dataGridView3" Margin="0,37,164,0" ColumnWidth="SizeToCells" MinColumnWidth="150" HeadersVisibility="Column"/>
+                    <DataGrid x:Name="dataGridView1" Margin="0,36.5,164,0" Grid.Row="1" MinColumnWidth="150" />
                     <TextBlock TextWrapping="Wrap" Text="点列表信息" Margin="0,7,854,162.5"/>
                     <TextBlock TextWrapping="Wrap" Text="点列表信息" Margin="0,7,854,162.5" Grid.Row="1"/>
                     <Grid Margin="869,37,10,0">
@@ -129,40 +107,23 @@
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
                     <TextBlock Margin="10,0,10,145" Text="所有点"/>
-                    <DataGrid Margin="10,21,10,10" MinColumnWidth="100">
-                        <DataGrid.Columns>
-                            <DataGridTextColumn Header="PID"/>
-                            <DataGridCheckBoxColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="IsControlP"/>
-                        </DataGrid.Columns>
-                    </DataGrid>
+                    <DataGrid x:Name="dataGrideView2" Margin="10,21,10,10" MinColumnWidth="100"/>
                     <TextBlock Grid.Column="1" Margin="10,0,10,145" Text="未知点"/>
-                    <DataGrid Grid.Column="1" Margin="10,21,10,10" MinColumnWidth="100">
-                        <DataGrid.Columns>
-                            <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="PID"/>
-                            <DataGridCheckBoxColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="IsControlP"/>
-                        </DataGrid.Columns>
-                    </DataGrid>
+                    <DataGrid x:Name="dataGridView5" Grid.Column="1" Margin="10,21,10,10" MinColumnWidth="100"/>
                     <TextBlock Grid.Column="2" Margin="10,0,10,145" Text="初始值"/>
-                    <DataGrid Grid.Column="2" Margin="10,21,10,10" MinColumnWidth="100">
-                        <DataGrid.Columns>
-                            <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="PID"/>
-                            <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="X"/>
-                            <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Y"/>
-                            <DataGridCheckBoxColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="IsControlP"/>
-                        </DataGrid.Columns>
-                    </DataGrid>
+                    <DataGrid x:Name="dataGridView4" Grid.Column="2" Margin="10,21,10,10" MinColumnWidth="100"/>
                     <TextBlock Grid.Row="1" Margin="10,0,10,145" Text="角度误差方程B"/>
-                    <ListBox Grid.Row="1" Margin="10,21,10,10"/>
+                    <ListBox x:Name="listBox1" Grid.Row="1" Margin="10,21,10,10"/>
                     <TextBlock Grid.Row="1" Grid.Column="1" Margin="10,0,10,145" Text="常数项L"/>
-                    <ListBox Grid.Row="1" Grid.Column="1" Margin="10,21,10,10"/>
+                    <ListBox x:Name="listBox2" Grid.Row="1" Grid.Column="1" Margin="10,21,10,10"/>
                     <TextBlock Grid.Row="1" Grid.Column="2" Margin="10,0,10,145" Text="测边误差方程B"/>
-                    <ListBox Grid.Row="1" Grid.Column="2" Margin="10,21,10,10"/>
+                    <ListBox x:Name="listBox3" Grid.Row="1" Grid.Column="2" Margin="10,21,10,10"/>
                     <TextBlock Grid.Row="2" Margin="10,0,10,145" Text="常数项L"/>
-                    <ListBox Grid.Row="2" Margin="10,21,10,10"/>
+                    <ListBox x:Name="listBox4" Grid.Row="2" Margin="10,21,10,10"/>
                     <TextBlock Grid.Row="2" Grid.Column="1" Margin="10,0,10,145" Text="未知点"/>
-                    <ListBox Grid.Row="2" Grid.Column="1" Margin="10,21,10,10"/>
+                    <ListBox x:Name="listBox5" Grid.Row="2" Grid.Column="1" Margin="10,21,10,10"/>
                     <TextBlock Grid.Row="2" Grid.Column="2" Margin="10,0,10,145" Text="评差结果"/>
-                    <ListBox Grid.Row="2" Grid.Column="2" Margin="10,21,10,10"/>
+                    <ListBox x:Name="listBox6" Grid.Row="2" Grid.Column="2" Margin="10,21,10,10"/>
                 </Grid>
             </TabItem>
             <TabItem Header="最终结果" Width="100" BorderBrush="{x:Null}">

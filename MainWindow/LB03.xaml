@@ -7,6 +7,69 @@
         mc:Ignorable="d"
         Title="坐标变换" Height="600" Width="1024">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="15*"/>
+        </Grid.RowDefinitions>
+        <Grid Background="#FFF0F0F0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="5*"/>
+            </Grid.ColumnDefinitions>
+            <Menu AllowDrop="True" HorizontalAlignment="Right" VerticalAlignment="Bottom" HorizontalContentAlignment="Center" >
+                <MenuItem Header="文件" Height="43" Width="128">
+                    <MenuItem Header="源坐标文件" Click="MenuItem_Click"/>
+                    <MenuItem Header="目标坐标文件" Click="MenuItem_Click_1"/>
+                    <MenuItem Header="退出" Click="MenuItem_Click_3"/>
+                </MenuItem>
+            </Menu>
+            <Menu AllowDrop="True" Grid.Column="1" VerticalAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Center">
+                <MenuItem Header="二维坐标变换" Click="_2DCoordinateTransformation" Height="43" Width="128"/>
+            </Menu>
+            <Menu AllowDrop="True" Grid.Column="3" HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalAlignment="Center"/>
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition Height="13*"/>
+                </Grid.RowDefinitions>
+                <TextBlock TextWrapping="Wrap" Text="源坐标系坐标" VerticalAlignment="Center"/>
+                <DataGrid x:Name="dataGrid1" Grid.Row="1" BorderBrush="{x:Null}"/>
+            </Grid>
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition Height="13*"/>
+                </Grid.RowDefinitions>
+                <TextBlock TextWrapping="Wrap" Text="公共点目标坐标系坐标" VerticalAlignment="Center"/>
+                <DataGrid x:Name="dataGrid2" Grid.Row="1" BorderBrush="{x:Null}"/>
+            </Grid>
+            <Grid Grid.Column="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition Height="13*"/>
+                </Grid.RowDefinitions>
+                <TextBlock TextWrapping="Wrap" Text="公共点坐标" VerticalAlignment="Center"/>
+                <DataGrid x:Name="dataGrid3" Grid.Row="1" BorderBrush="{x:Null}"/>
+            </Grid>
+            <Grid Grid.Column="3">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition Height="13*"/>
+                </Grid.RowDefinitions>
+                <TextBlock TextWrapping="Wrap" Text="转换后坐标数据" VerticalAlignment="Center"/>
+                <DataGrid x:Name="dataGrid4" Grid.Row="1" BorderBrush="{x:Null}"/>
+            </Grid>
+        </Grid>
     </Grid>
 </Window>

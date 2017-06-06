@@ -12,14 +12,14 @@ namespace MDP
     {
 
         private OpenFileDialog f;
-        private string name = System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Namespace;
 
         // 构造函数初始化设置
-        public ReadFile()
+        public ReadFile(string title)
         {
             f = new OpenFileDialog();
             f.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
             f.RestoreDirectory = true;
+            f.Title = title;
         }
         
         #region 获取数据内容

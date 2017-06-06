@@ -32,7 +32,7 @@ namespace MDP
         // 读取点文件
         private void readPoint(object sender, RoutedEventArgs e)
         {
-            ReadFile readFile = new ReadFile();
+            ReadFile readFile = new ReadFile("读取点文件");
             pointPath.Text = readFile.getPath();
             
             readFile.getPoints().ForEach(delegate (PointClass P)
@@ -47,7 +47,7 @@ namespace MDP
         // 读取边文件
         private void readEdge(object sender, RoutedEventArgs e)
         {
-            ReadFile readFile = new ReadFile();
+            ReadFile readFile = new ReadFile("读取边文件");
             edgePath.Text = readFile.getPath();
             int ii = 0;
 

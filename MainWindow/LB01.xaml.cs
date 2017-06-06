@@ -39,6 +39,7 @@ namespace MDP
             Window1 readFileWindow = new Window1();
             readFileWindow.Owner = this;
             readFileWindow.ShowDialog();
+            // 数据显示到界面
             addData(readFileWindow.pointContent, pointFeature);
             addData(readFileWindow.edgeContent, edgeFeature);
             foreach (PointClass CP in CurrentPoints)
@@ -264,20 +265,7 @@ namespace MDP
         }
         #endregion
 
-        #region 保存数据
-        private void saveData(object sender, RoutedEventArgs e)
-        {
-
-        }
-        #endregion
-
-        #region 退出
-        private void closeWindow(object sender, RoutedEventArgs e)
-        {
-            this.Close();
-        }
-        #endregion
-
+        #region 绘图
         private void draw(object sender, RoutedEventArgs e)
         {
             Bitmap bmap = new Bitmap(305, 359);
@@ -332,5 +320,13 @@ namespace MDP
 
             return bs;
         }
+        #endregion
+
+        #region 退出
+        private void closeWindow(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+        #endregion
     }
 }
